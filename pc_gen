@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cat << EOF
+prefix=${PREFIX}
+libdir=${LIBDIR}
+includedir=${INCDIR}
+version=5.7.20081102
+
+Name: lib${LIB}
+Description: ncurses 5.7 ${LIB} library
+Version: \${version}
+Libs: -L${LIBDIR} -l${LIB}
+Cflags: -I${INCDIR}
