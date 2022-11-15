@@ -123,7 +123,7 @@ ncurses.pc: ../pc_gen
 
 build: libcurses
 
-libcurses: ${LIBSO} ${LIBA}
+libcurses: ${GENFILES} ${LIBSO} ${LIBA}
 
 ${LIBSO}: ${OBJS}
 	${CC} -shared -o $@ ${OBJS} -Wl,--soname="$@"
