@@ -10,5 +10,6 @@ install:
 	${INSTALL} -c -m 444 ${FILES} ${DATAROOTDIR}/tabset
 
 uninstall:
-	-cd ${DATAROOTDIR}/tabset; \
-		${RM} -f ${FILES}; 
+	for file in ${FILES}; do \
+		rm -f ${DATAROOTDIR}/$$file; \
+	done

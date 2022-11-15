@@ -1,3 +1,4 @@
 This is a port of the ncurses found in OpenBSD's source tree. 
 
 Makefiles have been rewritten to make it a bit more portable.
+But still it's not recommended for production uses... yet.

@@ -68,8 +68,6 @@ GENFILES =  codes.c comp_captab.c expanded.c fallback.c \
 	keys.list lib_gen.c lib_keyname.c names.c unctrl.c \
 	make_hash make_keys init_keytry.h ncurses.pc
 
-genfiles: ${GENFILES}
-
 keys.list: tinfo/MKkeys_list.sh
 	sh tinfo/MKkeys_list.sh Caps | sort > $@
 
