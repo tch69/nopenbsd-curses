@@ -1282,10 +1282,11 @@ main(int argc, char *argv[])
     bool init_analyze = FALSE;
     bool suppress_untranslatable = FALSE;
 
-    /*if (pledge("stdio rpath", NULL) == -1) {
+#if __OpenBSD__
+    if (pledge("stdio rpath", NULL) == -1) {
 	perror("pledge");
 	exit(1);
-    } */
+#endif
 
     /* where is the terminfo database location going to default to? */
     restdir = firstdir = 0;

@@ -155,9 +155,9 @@
 #define SIG_ATOMIC_T volatile sig_atomic_t
 #define SIZEOF_SIGNED_CHAR 1
 #define STDC_HEADERS 1
-#define SYSTEM_NAME "linux-musl"
-#define TERMINFO "/usr/share/terminfo"
-#define TERMINFO_DIRS "/usr/share/terminfo:/usr/local/share/terminfo"
+#define SYSTEM_NAME "%SYSNAME%"
+#define TERMINFO "%PREFIX%/share/terminfo"
+#define TERMINFO_DIRS "%PREFIX%/share/terminfo:%PREFIX%/local/share/terminfo"
 #define TIME_WITH_SYS_TIME 1
 #define TYPEOF_CHTYPE long
 #define USE_ASSUMED_COLOR 1

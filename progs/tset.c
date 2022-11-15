@@ -1119,8 +1119,10 @@ main(int argc, char **argv)
 
     _nc_progname = _nc_rootname(*argv);
 
-    /*if (pledge("stdio rpath wpath tty", NULL) == -1)
-	err("pledge: %s", strerror(errno));*/
+#if __OpenBSD__
+    if (pledge("stdio rpath wpath tty", NULL) == -1)
+	err("pledge: %s", strerror(errno));
+#endif
 
     obsolete(argv);
     noinit = noset = quiet = Sflag = sflag = showterm = 0;

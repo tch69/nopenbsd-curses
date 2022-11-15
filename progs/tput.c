@@ -76,8 +76,10 @@ main(int argc, char *argv[])
 	char *p, *term, *str;
 	char **oargv;
 
-	/*if (pledge("stdio rpath wpath tty", NULL) == -1)
-		err(1, "pledge");*/
+#if __OpenBSD__
+	if (pledge("stdio rpath wpath tty", NULL) == -1)
+		err(1, "pledge");
+#endif
 
 	oargv = argv;
 	term = NULL;

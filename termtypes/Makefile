@@ -25,12 +25,10 @@ install:
 	     {} ${DATAROOTDIR}/{} \;
 	${INSTALL} -m 644 termcap \
 	     ${DATAROOTDIR}/misc/termcap
-	${LN} -sf ${DATAROOTDIR}/misc/termcap ${SYSCONFDIR}/termcap
-	${CHMOD} -h root:wheel ${SYSCONFDIR}/termcap
 
 uninstall:
 	${RM} -rf ${DATAROOTDIR}/terminfo
-	${RM} -f ${SYSCONFDIR}/termcap ${DATAROOTDIR}/misc/termcap
+	${RM} -f ${DATAROOTDIR}/misc/termcap
 	${RM} -f ${MANDIR}/man5/termcap.5
 
 clean:

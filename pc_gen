@@ -11,3 +11,4 @@ Description: ncurses 5.7 ${LIB} library
 Version: \${version}
 Libs: -L${LIBDIR} -l${LIB}
 Cflags: -I${INCDIR}
+EOF

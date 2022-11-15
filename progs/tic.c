@@ -499,10 +499,12 @@ main(int argc, char *argv[])
     bool check_only = FALSE;
     bool suppress_untranslatable = FALSE;
 
-    /*if (pledge("stdio rpath wpath cpath", NULL) == -1) {
+#if __OpenBSD__
+    if (pledge("stdio rpath wpath cpath", NULL) == -1) {
 	perror("pledge");
 	exit(1);
-    }*/
+    }
+#endif
 
     log_fp = stderr;
 

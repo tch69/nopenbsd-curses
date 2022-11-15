@@ -1,4 +1,16 @@
 This is a port of the ncurses found in OpenBSD's source tree. 
 
 Makefiles have been rewritten to make it a bit more portable.
+
 But still it's not recommended for production uses... yet.
+
+I hope I made as least mistakes as possible, just so I won't 
+have to fix them (because I can't).
+
+WIP: Right now, there variables are hard-coded in ncurses_cfg.h:
+
+#define SYSTEM_NAME "linux-musl"
+#define TERMINFO "/usr/share/terminfo"
+#define TERMINFO_DIRS "/usr/share/terminfo:/usr/local/share/terminfo"
+
+I'm too lazy to but I'll try to write a script to change that.

@@ -64,7 +64,7 @@ CFLAGS+=	-I.
 
 INCS 	= curses.h term.h termcap.h unctrl.h
 
-GENFILES =  codes.c comp_captab.c expanded.c fallback.c \
+GENFILES =  ncurses_cfg.h codes.c comp_captab.c expanded.c fallback.c \
 	keys.list lib_gen.c lib_keyname.c names.c unctrl.c \
 	make_hash make_keys init_keytry.h ncurses.pc
 
