@@ -53,4 +53,4 @@ uninstall:
 
 clean:
 	${RM} -rf ${OBJS}
-	${RM} -rf ${LIBSO} ${LIBA}
+	${RM} -rf ${LIBSO} ${LIBA} panel.pc
