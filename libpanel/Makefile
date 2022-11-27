@@ -38,10 +38,11 @@ install: ${LIBA} ${LIBSO}
 	${INSTALL} -d ${MANDIR}/man3
 	${INSTALL} -d ${LIBDIR}
 	${INSTALL} -d ${PKGCONFDIR}
-	${INSTALL} -d ${INCDIR} 
+	${INSTALL} -d ${INCDIR}
 	${INSTALL} -m 755 ${LIBSO} ${LIBDIR}/${LIBSO}
 	${INSTALL} -m 644 ${LIBA} ${LIBDIR}/${LIBA}
 	${INSTALL} -m 644 panel.h ${INCDIR}/panel.h
+	${INSTALL} -m 644 panel.pc ${PKGCONFDIR}/panel.pc
 	${INSTALL} -m -644 panel.3 ${MANDIR}/man3/panel.3
 
 uninstall:

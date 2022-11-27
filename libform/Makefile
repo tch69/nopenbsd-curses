@@ -38,13 +38,13 @@ install: ${LIBA} ${LIBSO}
 	${INSTALL} -d ${MANDIR}/man3
 	${INSTALL} -d ${LIBDIR}
 	${INSTALL} -d ${PKGCONFDIR}
-	${INSTALL} -d ${INCDIR} 
+	${INSTALL} -d ${INCDIR}
 	${INSTALL} -m 755 ${LIBSO} ${LIBDIR}/${LIBSO}
 	${INSTALL} -m 644 form.pc ${PKGCONFDIR}/form.pc
 	${INSTALL} -m 644 ${LIBA} ${LIBDIR}/${LIBA}
 	${INSTALL} -m 644 form.h ${INCDIR}/form.h
 	for i in *.3; do \
-		${INSTALL} -m -644 $$i ${MANDIR}/man3/$$i; \
+		${INSTALL} -m 644 $$i ${MANDIR}/man3/$$i; \
 	done
 
 uninstall:
