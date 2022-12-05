@@ -59,7 +59,7 @@ OBJS+=  charable.o lib_add_wch.o lib_box_set.o lib_cchar.o lib_erasewchar.o \
 
 HOSTCFLAGS?=	${CFLAGS}
 HOSTLDFLAGS?=	${LDFLAGS}
-HOSTCFLAGS+=	-I. 
+HOSTCFLAGS+=	-I.
 CFLAGS+=	-I.
 
 INCS 	= curses.h term.h termcap.h unctrl.h
@@ -124,7 +124,7 @@ build: libcurses
 libcurses: ${GENFILES} ${LIBSO} ${LIBA}
 
 ${LIBSO}: ${OBJS}
-	${CC} -shared -o $@ ${OBJS} -Wl,--soname="$@"
+	${CC} -shared -o $@ ${OBJS} -Wl,--soname="$@" ${LDFLAGS}
 
 ${LIBA}: ${OBJS}
 	${AR} rc $@ ${OBJS}
@@ -172,7 +172,7 @@ uninstall:
 	done
 	${RM} -f ${MANDIR}/man7/term.7
 
-clean: 
+clean:
 	rm -rf ${GENFILES}
 	rm -rf ${OBJS}
 	rm -rf ${LIBSO} ${LIBA}

@@ -28,7 +28,7 @@ ${LIBA}: ${OBJS}
 	${RANLIB} $@
 
 ${LIBSO}: ${OBJS}
-	${CC} -shared -o $@ -Wl,--soname="$@" ${OBJS}
+	${CC} -shared -o $@ -Wl,--soname="$@" ${OBJS} ${LDFLAGS}
 
 build: libform
 

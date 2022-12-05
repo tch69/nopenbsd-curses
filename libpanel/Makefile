@@ -24,7 +24,7 @@ panel.pc: ../pc_gen
 	${CC} -c -fPIC ${CFLAGS} $<
 
 ${LIBSO}: ${OBJS}
-	${CC} -shared -o $@ -Wl,--soname="$@" ${OBJS}
+	${CC} -shared -o $@ -Wl,--soname="$@" ${OBJS} ${LDFLAGS}
 
 ${LIBA}: ${OBJS}
 	${AR} rc $@ ${OBJS}
