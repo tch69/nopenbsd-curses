@@ -19,17 +19,19 @@ install:
 	${INSTALL} -d -o root -g wheel ${DATAROOTDIR}/misc
 	${INSTALL} -d -o root -g wheel ${SYSCONFDIR}
 	${INSTALL} -d -o root -g wheel ${MANDIR}/man5
-	${INSTALL} -m 644 termcap.5 /${MANDIR}/man5/termcap.5
+	${INSTALL} -m 644 termcap.5 ${MANDIR}/man5/termcap.5
 	${FIND} terminfo -type f -exec \
 	     ${INSTALL} -D -m 644 \
 	     {} ${DATAROOTDIR}/{} \;
 	${INSTALL} -m 644 termcap \
 	     ${DATAROOTDIR}/misc/termcap
+	${LN} -s ${DATADOORDIR}/misc/termcap ${SYSCONFDIR}/termcap
 
 uninstall:
 	${RM} -rf ${DATAROOTDIR}/terminfo
 	${RM} -f ${DATAROOTDIR}/misc/termcap
 	${RM} -f ${MANDIR}/man5/termcap.5
+	${RM} -f ${SYSCONFDIR}/termcap
 
 clean:
 	${RM} -f termcap
